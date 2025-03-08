@@ -4,6 +4,7 @@ const movies =
       "id": 1,
       "title": "Inception",
       "year": 2010,
+      "genre": ["Action", "Sci-Fi", "Thriller"],
       "rating": 8.8,
       "poster": "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
   },
@@ -11,6 +12,7 @@ const movies =
       "id": 2,
       "title": "Interstellar",
       "year": 2014,
+      "genre": ["Adventure", "Drama", "Sci-Fi"],
       "rating": 8.6,
       "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
   },
@@ -18,6 +20,7 @@ const movies =
       "id": 3,
       "title": "The Dark Knight",
       "year": 2008,
+      "genre": ["Action", "Crime", "Drama"],
       "rating": 9.0,
       "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
   },
@@ -25,6 +28,7 @@ const movies =
       "id": 4,
       "title": "The Matrix",
       "year": 1999,
+      "genre": ["Action", "Sci-Fi"],
       "rating": 8.7,
       "poster": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
   },
@@ -32,6 +36,7 @@ const movies =
       "id": 5,
       "title": "Avengers: Endgame",
       "year": 2019,
+      "genre": ["Action", "Adventure", "Sci-Fi"],
       "rating": 8.4,
       "poster": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
   },
@@ -39,6 +44,7 @@ const movies =
       "id": 6,
       "title": "Titanic",
       "year": 1997,
+      "genre": ["Drama", "Romance"],
       "rating": 7.8,
       "poster": "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
   },
@@ -46,6 +52,7 @@ const movies =
       "id": 7,
       "title": "Joker",
       "year": 2019,
+      "genre": ["Crime", "Drama", "Thriller"],
       "rating": 8.4,
       "poster": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
   },
@@ -53,6 +60,7 @@ const movies =
       "id": 8,
       "title": "The Lion King",
       "year": 1994,
+      "genre": ["Drama", "Romance"],
       "rating": 8.5,
       "poster": "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
   },
@@ -60,6 +68,7 @@ const movies =
       "id": 9,
       "title": "The Shawshank Redemption",
       "year": 1994,
+      "genre": ["Action", "Drama"],
       "rating": 9.3,
       "poster": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
   },
@@ -67,11 +76,12 @@ const movies =
       "id": 10,
       "title": "Forrest Gump",
       "year": 1994,
+      "genre": ["Drama"],
       "rating": 8.8,
       "poster": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg"
   }
 ]
-
+      
         function displayMovies(movieList) {
             const container = document.getElementById('movieContainer');
             container.innerHTML = '';
@@ -81,7 +91,7 @@ const movies =
                 movieCard.innerHTML = `
                     <img src="${movie.poster}" alt="${movie.title}">
                     <h3>${movie.title}</h3>
-                    <p>${movie.year}</p>
+                    <p>${movie.year} ${movie.genre.join(", ")}</p>
                     <p>⭐ ${movie.rating}</p>
                 `;
                 container.appendChild(movieCard);
